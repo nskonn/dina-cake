@@ -1,0 +1,12 @@
+# dependencies
+/.idea
+/node_modules
+
+/server
+
+# production
+/build
+/dist
+
+# OS
+.DS_Store
