@@ -108,7 +108,7 @@ export function Catalog() {
       {/* Призыв к действию */}
       <section className="py-20 bg-[#A67C52] text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="mb-6" style={{ fontSize: '48px', lineHeight: '1.2', fontFamily: "'Montserrat', sans-serif", fontWeight: '700' }}>Не нашли подходящий вариант?</h2>
+          <h2 className="mb-6" style={{ fontSize: '48px', lineHeight: '1.2', fontFamily: "'Montserrat', sans-serif", fontWeight: '500' }}>Не нашли подходящий вариант?</h2>
           <p className="text-white/90 mb-8" style={{ fontSize: '20px', lineHeight: '1.6' }}>
             Мы создаем торты на заказ по вашим индивидуальным пожеланиям.
             Свяжитесь с нами, и мы обсудим ваш уникальный проект!
