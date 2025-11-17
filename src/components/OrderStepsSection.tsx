@@ -29,7 +29,7 @@ export function OrderStepsSection({ onOrderClick }: OrderStepsSectionProps) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white border-l-4 border-[#A67C52] p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow rounded-lg">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 bg-[#A67C52] text-white rounded-sm flex items-center justify-center">
@@ -65,7 +65,7 @@ export function OrderStepsSection({ onOrderClick }: OrderStepsSectionProps) {
             </div>
           </div>
 
-          <div className="bg-white border-l-4 border-[#A67C52] p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow rounded-lg">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 bg-[#A67C52] text-white rounded-sm flex items-center justify-center">
@@ -101,7 +101,7 @@ export function OrderStepsSection({ onOrderClick }: OrderStepsSectionProps) {
             </div>
           </div>
 
-          <div className="bg-white border-l-4 border-[#A67C52] p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow rounded-lg">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 bg-[#A67C52] text-white rounded-sm flex items-center justify-center">
@@ -137,7 +137,7 @@ export function OrderStepsSection({ onOrderClick }: OrderStepsSectionProps) {
             </div>
           </div>
 
-          <div className="bg-white border-l-4 border-[#A67C52] p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white p-6 shadow-sm hover:shadow-md transition-shadow rounded-lg">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 bg-[#A67C52] text-white rounded-sm flex items-center justify-center">
@@ -180,11 +180,10 @@ export function OrderStepsSection({ onOrderClick }: OrderStepsSectionProps) {
             className="inline-flex items-center gap-3 bg-[#A67C52] text-white px-8 py-4 hover:bg-[#8B6640] transition-colors shadow-lg hover:shadow-xl"
             style={{
               fontFamily: "'Montserrat', sans-serif",
-              fontWeight: '600',
+              fontWeight: '500',
             }}
           >
-            <Send className="w-5 h-5" />
-            Оформить заказ сейчас
+            Оформить заказ
           </button>
         </div>
       </div>

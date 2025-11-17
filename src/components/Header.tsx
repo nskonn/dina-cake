@@ -46,13 +46,13 @@ export function Header() {
                                     {link.name}
                                 </Link>
                             ))}
-                            <a
-                                href="#contact"
+                            <button
+                                type="button"
                                 className="bg-[#A67C52] text-white px-6 py-2 rounded hover:bg-[#8B6640] transition-colors"
                                 onClick={() => setModalOpen(true)}
                             >
                                 Заказать
-                            </a>
+                            </button>
                         </nav>
 
                         {/* Мобильное меню кнопка */}
@@ -82,13 +82,16 @@ export function Header() {
                                         {link.name}
                                     </Link>
                                 ))}
-                                <a
-                                    href="#contact"
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    className="bg-[#A67C52] text-white px-6 py-2 rounded-lg hover:bg-[#8B6640] transition-colors text-center"
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setMobileMenuOpen(false);
+                                        setModalOpen(true);
+                                    }}
+                                    className="bg-[#A67C52] text-white px-6 py-2 rounded-lg hover:bg-[#8B6640] transition-colors text-center w-full"
                                 >
-                                    Контакты
-                                </a>
+                                    Заказать
+                                </button>
                             </nav>
                         </div>
                     )}
