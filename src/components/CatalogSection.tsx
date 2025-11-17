@@ -10,6 +10,24 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
     const [selectedCategory, setSelectedCategory] = useState('Торты');
     const [selectedSubcategory, setSelectedSubcategory] = useState('Все');
 
+    const renderSubcategories = (subcategories: string[]) => (
+        <div className="flex gap-3 sm:gap-4 lg:gap-5 mb-6 sm:mb-8 pb-4 md:pb-6 sm:pb-2 border-b border-gray-300 overflow-x-auto sm:overflow-visible flex-wrap sm:flex-wrap scrollbar-hide -mx-2 px-2 sm:mx-0 sm:px-0">
+            {subcategories.map(subcategory => (
+                <button
+                    key={subcategory}
+                    onClick={() => setSelectedSubcategory(subcategory)}
+                    className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-colors border ${
+                        selectedSubcategory === subcategory
+                            ? 'bg-gray-900 border-gray-900 text-white shadow-sm'
+                            : 'bg-white/80 border-gray-200 text-gray-600 hover:text-gray-900'
+                    }`}
+                >
+                    {subcategory}
+                </button>
+            ))}
+        </div>
+    );
+
     return (
         <section className="py-20 bg-[#F5E8DC]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,7 +44,7 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                     </h2>
                 </div>
 
-                <div className="flex gap-6 mb-8 overflow-x-auto pb-2 scrollbar-hide border-b border-gray-300">
+                <div className="flex gap-6 mb-4 md:mb-6 overflow-x-auto pb-2 scrollbar-hide border-b border-gray-300">
                     {['Торты', 'Бенто-торты', 'Капкейки', 'Трайфл', 'Эскимо', 'Кейк-попс'].map(
                         category => (
                             <button
@@ -47,164 +65,73 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                     )}
                 </div>
 
-                {selectedCategory === 'Торты' && (
-                    <div className="flex flex-wrap gap-6 mb-8 pb-2 border-b border-gray-300">
-                        {[
-                            'Все',
-                            'CHUKEPC',
-                            'ВИШНЁВЫЙ ЛОМТИК',
-                            'ФЕРРЕРО',
-                            'Капитан Кукис (классический)',
-                            'Капитан Кукис (кофейный)',
-                            'Фисташка-малина',
-                            'Молочная девочка',
-                            'Ягодное облако',
-                            'Красный бархат',
-                            'Пряная морковь',
-                            'Мак-лимон',
-                            'МЕдОВИК (классический)',
-                            'Медовик - малина',
-                        ].map(subcategory => (
-                            <button
-                                key={subcategory}
-                                onClick={() => setSelectedSubcategory(subcategory)}
-                                className={`whitespace-nowrap pb-4 transition-colors text-sm ${
-                                    selectedSubcategory === subcategory
-                                        ? 'border-b-2 border-gray-900 text-gray-900'
-                                        : 'text-gray-600 hover:text-gray-900'
-                                }`}
-                            >
-                                {subcategory}
-                            </button>
-                        ))}
-                    </div>
-                )}
+                {selectedCategory === 'Торты' &&
+                    renderSubcategories([
+                        'Все',
+                        'CHUKEPC',
+                        'ВИШНЁВЫЙ ЛОМТИК',
+                        'ФЕРРЕРО',
+                        'Капитан Кукис (классический)',
+                        'Капитан Кукис (кофейный)',
+                        'Фисташка-малина',
+                        'Молочная девочка',
+                        'Ягодное облако',
+                        'Красный бархат',
+                        'Пряная морковь',
+                        'Мак-лимон',
+                        'МЕдОВИК (классический)',
+                        'Медовик - малина',
+                    ])}
 
-                {selectedCategory === 'Бенто-торты' && (
-                    <div className="flex flex-wrap gap-6 mb-8 pb-2 border-b border-gray-300">
-                        {[
-                            'Все',
-                            'Сникерс',
-                            'Красный бархат (клубника)',
-                            'Красный бархат (манго-маракуйя)',
-                            'Мак-лимон',
-                            'Ваниль-клубника',
-                            'Ваниль малина',
-                            'Вишневый ломтик',
-                        ].map(subcategory => (
-                            <button
-                                key={subcategory}
-                                onClick={() => setSelectedSubcategory(subcategory)}
-                                className={`whitespace-nowrap pb-4 transition-colors text-sm ${
-                                    selectedSubcategory === subcategory
-                                        ? 'border-b-2 border-gray-900 text-gray-900'
-                                        : 'text-gray-600 hover:text-gray-900'
-                                }`}
-                            >
-                                {subcategory}
-                            </button>
-                        ))}
-                    </div>
-                )}
+                {selectedCategory === 'Бенто-торты' &&
+                    renderSubcategories([
+                        'Все',
+                        'Сникерс',
+                        'Красный бархат (клубника)',
+                        'Красный бархат (манго-маракуйя)',
+                        'Мак-лимон',
+                        'Ваниль-клубника',
+                        'Ваниль малина',
+                        'Вишневый ломтик',
+                    ])}
 
                 {selectedCategory === 'Капкейки' && (
-                    <div className="flex flex-wrap gap-6 mb-8 pb-2 border-b border-gray-300">
-                        {[
-                            'Все',
-                            'Сникерс',
-                            'Шоколадное комбо',
-                            'Вишня в шоколаде',
-                            'Лимон-малина',
-                            'Пряная морковь',
-                        ].map(subcategory => (
-                            <button
-                                key={subcategory}
-                                onClick={() => setSelectedSubcategory(subcategory)}
-                                className={`whitespace-nowrap pb-4 transition-colors text-sm ${
-                                    selectedSubcategory === subcategory
-                                        ? 'border-b-2 border-gray-900 text-gray-900'
-                                        : 'text-gray-600 hover:text-gray-900'
-                                }`}
-                            >
-                                {subcategory}
-                            </button>
-                        ))}
-                    </div>
+                    renderSubcategories([
+                        'Все',
+                        'Сникерс',
+                        'Шоколадное комбо',
+                        'Вишня в шоколаде',
+                        'Лимон-малина',
+                        'Пряная морковь',
+                    ])
                 )}
 
                 {selectedCategory === 'Трайфл' && (
-                    <div className="flex flex-wrap gap-6 mb-8 pb-2 border-b border-gray-300">
-                        {[
-                            'Все',
-                            'Сникерс',
-                            'Вишневый ломтик',
-                            'Мак-лимон',
-                            'Пряная морковь',
-                            'Ваниль-малина',
-                            'Ваниль-клубника',
-                        ].map(subcategory => (
-                            <button
-                                key={subcategory}
-                                onClick={() => setSelectedSubcategory(subcategory)}
-                                className={`whitespace-nowrap pb-4 transition-colors text-sm ${
-                                    selectedSubcategory === subcategory
-                                        ? 'border-b-2 border-gray-900 text-gray-900'
-                                        : 'text-gray-600 hover:text-gray-900'
-                                }`}
-                            >
-                                {subcategory}
-                            </button>
-                        ))}
-                    </div>
+                    renderSubcategories([
+                        'Все',
+                        'Сникерс',
+                        'Вишневый ломтик',
+                        'Мак-лимон',
+                        'Пряная морковь',
+                        'Ваниль-малина',
+                        'Ваниль-клубника',
+                    ])
                 )}
 
                 {selectedCategory === 'Эскимо' && (
-                    <div className="flex flex-wrap gap-6 mb-8 pb-2 border-b border-gray-300">
-                        {[
-                            'Все',
-                            'Сникерс',
-                            'Вишневый ломтик',
-                            'Мак-лимон',
-                            'Пряная морковь',
-                            'Ваниль-малина',
-                            'Ваниль-клубника',
-                        ].map(subcategory => (
-                            <button
-                                key={subcategory}
-                                onClick={() => setSelectedSubcategory(subcategory)}
-                                className={`whitespace-nowrap pb-4 transition-colors text-sm ${
-                                    selectedSubcategory === subcategory
-                                        ? 'border-b-2 border-gray-900 text-gray-900'
-                                        : 'text-gray-600 hover:text-gray-900'
-                                }`}
-                            >
-                                {subcategory}
-                            </button>
-                        ))}
-                    </div>
+                    renderSubcategories([
+                        'Все',
+                        'Сникерс',
+                        'Вишневый ломтик',
+                        'Мак-лимон',
+                        'Пряная морковь',
+                        'Ваниль-малина',
+                        'Ваниль-клубника',
+                    ])
                 )}
 
                 {selectedCategory === 'Кейк-попс' && (
-                    <div className="flex flex-wrap gap-6 mb-8 pb-2 border-b border-gray-300">
-                        {[
-                            'Все',
-                            'Маковый',
-                            'Ванильный',
-                            'Шоколадный',
-                        ].map(subcategory => (
-                            <button
-                                key={subcategory}
-                                onClick={() => setSelectedSubcategory(subcategory)}
-                                className={`whitespace-nowrap pb-4 transition-colors text-sm ${
-                                    selectedSubcategory === subcategory
-                                        ? 'border-b-2 border-gray-900 text-gray-900'
-                                        : 'text-gray-600 hover:text-gray-900'
-                                }`}
-                            >
-                                {subcategory}
-                            </button>
-                        ))}
-                    </div>
+                    renderSubcategories(['Все', 'Маковый', 'Ванильный', 'Шоколадный'])
                 )}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
