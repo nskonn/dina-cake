@@ -92,7 +92,7 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
             {
               name: '«Манго-кейк»',
               description:
-                'Воздушный бисквит пропитанный сахарным сиропом с коньяком, с прослойкой малинового конфи, экзотического крема манго-маракуйя и сливочно-малиновой начинки. Крем торта сделан на основе творожного сыра, сыра Маскарпоне и натуральных сливок',
+                'Воздушный бисквит пропитанный сахарным сиропом с коньяком, с прослойкой малинового конфи, экзотического крема манго-маракуйя и сливочно-малиновой начинки. Крем торта сделан на основе творожного сыра, сыра Маскарпоне и натуральных сливок экзотического крема манго-маракуйя и сливочно-малиновой начинки экзотического крема манго-маракуйя и сливочно-малиновой начинки экзотического крема манго-маракуйя и сливочно-малиновой начинки',
               price: '4 100 р.',
               image:
                 'https://images.unsplash.com/photo-1730672558646-c65c4784dd16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5ZWxsb3clMjBjYWtlJTIwZGVzc2VydHxlbnwxfHx8fDE3NjI3MTUwNDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
@@ -110,7 +110,7 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
           ].map((product, index) => (
             <div
               key={index}
-              className="group cursor-pointer overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-200 rounded-xl"
+              className="group cursor-pointer h-full overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-200 rounded-xl flex flex-col"
             >
               <div className="aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#F5E8DC] to-[#E8C5C5] relative">
                 <img
@@ -137,7 +137,7 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                 </div>
               </div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 <h3
                   className="text-gray-900 text-lg md:text-xl mb-3"
                   style={{
@@ -147,12 +147,19 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                 >
                   {product.name}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm md:text-base mb-5">
+                <p
+                  className="text-gray-600 leading-relaxed text-sm md:text-base mb-5 overflow-hidden text-ellipsis"
+                  style={{
+                    display: '-webkit-box',
+                    WebkitLineClamp: 6,
+                    WebkitBoxOrient: 'vertical',
+                  }}
+                >
                   {product.description}
                 </p>
                 <button
                   onClick={onOrderClick}
-                  className="w-full border border-gray-300 text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-900 hover:text-white transition-colors"
+                  className="mt-auto w-full border border-gray-300 text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-900 hover:text-white transition-colors"
                   style={{
                     fontFamily: "'Montserrat', sans-serif",
                     fontWeight: '600',
