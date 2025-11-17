@@ -119,12 +119,7 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
-                {product.badge && (
-                  <div className="absolute top-4 right-4 bg-white/50 backdrop-blur-sm px-4 py-2 shadow-lg text-white">
-                    {product.badge}
-                  </div>
-                )}
-                <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-4 py-2 shadow-lg">
+                <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-4 py-2 rounded shadow-lg">
                   <p
                     className="text-white"
                     style={{
@@ -132,7 +127,7 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                       fontWeight: '600',
                     }}
                   >
-                    {product.price}
+                    {product.price} кг.
                   </p>
                 </div>
               </div>

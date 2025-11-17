@@ -188,7 +188,7 @@ export function Home() {
             <CatalogSection onOrderClick={() => setModalOpen(true)} />
 
             {/* Отзывы */}
-            <ReviewsSection />
+            <ReviewsSection onOrderClick={() => setModalOpen(true)} />
 
             {/* Как сделать заказ */}
             <OrderStepsSection onOrderClick={() => setModalOpen(true)} />

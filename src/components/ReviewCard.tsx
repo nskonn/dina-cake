@@ -1,67 +1,68 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote } from 'lucide-react';
 
 interface ReviewCardProps {
-  cakeName: string;
-  review: string;
-  image: string;
+    cakeName: string;
+    review: string;
+    image: string;
+    onOrderClick: () => void;
 }
 
-export function ReviewCard({
-  cakeName,
-  review,
-  image,
-}: ReviewCardProps) {
-  return (
-    <div className="group cursor-pointer bg-white overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border-l-4 border-[#A67C52]">
-      {/* Изображение */}
-      <div className="aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#F5E8DC] to-[#E8C5C5] relative">
-        <img
-          src={image}
-          alt={cakeName}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent"></div>
+export function ReviewCard({ cakeName, review, image, onOrderClick }: ReviewCardProps) {
+    return (
+        <div className="group flex flex-col h-full overflow-hidden border border-gray-200 rounded-xl shadow-sm hover:shadow-xl transition-all duration-500">
+            <div className="aspect-[4/3] overflow-hidden bg-gradient-to-br from-[#F5E8DC] to-[#E8C5C5] relative">
+                <img
+                    src={image}
+                    alt={cakeName}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                <div
+                    className="absolute bottom-4 left-4 z-20 bg-white/20 backdrop-blur-sm px-4 py-2 rounded shadow-lg text-white"
+                    style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontWeight: '500',
+                    }}
+                >
+                    Медовик
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent z-10"></div>
+            </div>
 
-        {/* Рейтинг */}
-        <div className="absolute bottom-4 left-4 bg-white/20 rounded backdrop-blur-sm px-4 py-2 shadow-lg flex items-center gap-1.5">
-          {[...Array(5)].map((_, i) => (
-            <Star
-              key={i}
-              className="w-4 h-4 fill-[#A67C52] text-[#A67C52]"
-            />
-          ))}
-        </div>
-      </div>
+            <div className="p-6 flex flex-col flex-1">
+                <h3
+                    className="text-gray-900 text-lg md:text-xl mb-3"
+                    style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontWeight: '600',
+                    }}
+                >
+                    {cakeName}
+                </h3>
 
-      {/* Информация */}
-      <div className="p-6 bg-white">
-        {/* Название торта */}
-        <div className="flex items-center gap-3 mb-4">
-          <div className="h-px flex-1 bg-[#E8C5C5]"></div>
-          <h3
-            className="text-gray-900 group-hover:text-[#A67C52] transition-colors"
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: "600",
-            }}
-          >
-            {cakeName}
-          </h3>
-          <div className="h-px flex-1 bg-[#E8C5C5]"></div>
-        </div>
+                <div
+                    className="relative text-gray-700 leading-relaxed text-sm md:text-base mb-5 overflow-hidden text-ellipsis"
+                    style={{
+                        display: '-webkit-box',
+                        WebkitLineClamp: 6,
+                        WebkitBoxOrient: 'vertical',
+                    }}
+                >
+                    <Quote className="absolute -top-1 -left-1 w-5 h-5 text-[#A67C52] opacity-30" />
+                    <p className="pl-4">{review}</p>
+                    <Quote className="absolute -bottom-1 -right-1 w-5 h-5 text-[#A67C52] opacity-30 rotate-180" />
+                </div>
 
-        {/* Текст отзыва */}
-        <div className="relative bg-[#F5E8DC]/30 p-4 border-l-2 border-[#E8C5C5]">
-          <Quote className="absolute top-2 left-2 w-5 h-5 text-[#A67C52] opacity-30" />
-          <p
-            className="text-gray-700 leading-relaxed italic pl-4"
-            style={{ fontSize: "20px", lineHeight: "1.6" }}
-          >
-            {review}
-          </p>
-          <Quote className="absolute bottom-2 right-2 w-5 h-5 text-[#A67C52] opacity-30 rotate-180" />
+                <button
+                    onClick={onOrderClick}
+                    className="mt-auto w-full border border-gray-300 text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-900 hover:text-white transition-colors"
+                    style={{
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontWeight: '600',
+                    }}
+                >
+                    Заказать
+                </button>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 }
