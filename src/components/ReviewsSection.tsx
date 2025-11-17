@@ -1,3 +1,4 @@
+import Slider from 'react-slick';
 import { ReviewCard } from './ReviewCard';
 
 type ReviewSectionProps = {
@@ -46,7 +47,27 @@ export function ReviewsSection({ onOrderClick }: ReviewSectionProps) {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="md:hidden">
+                    <Slider
+                        dots
+                        infinite
+                        speed={500}
+                        slidesToShow={1}
+                        slidesToScroll={1}
+                        arrows={false}
+                        autoplay
+                        autoplaySpeed={4000}
+                        swipe
+                    >
+                        {reviews.map((review, index) => (
+                            <div key={index} className="px-2">
+                                <ReviewCard {...review} onOrderClick={onOrderClick} />
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+
+                <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {reviews.map((review, index) => (
                         <ReviewCard key={index} {...review} onOrderClick={onOrderClick} />
                     ))}

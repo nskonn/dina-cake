@@ -38,7 +38,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
               <Phone size={20} />
             </div>
             <div>
-              <div className="text-gray-500 text-sm">Позвонить</div>
+              <div className="text-gray-500 text-sm">Телефон</div>
               <div className="text-gray-900">{contactInfo.phone}</div>
             </div>
           </a>
