@@ -1,4 +1,4 @@
-import { useState, Children, cloneElement } from 'react';
+import React, { useState, Children, cloneElement } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ContactModal } from '../components/ContactModal';
 import Slider from 'react-slick';
@@ -7,6 +7,7 @@ import { CatalogSection } from '../components/CatalogSection';
 import { ReviewsSection } from '../components/ReviewsSection';
 import { OrderStepsSection } from '../components/OrderStepsSection';
 import { ContactsSection } from '../components/ContactsSection';
+import cake2 from '../assets/cake/cake3.jpg';
 
 export function Home() {
     const navigate = useNavigate();
@@ -50,84 +51,35 @@ export function Home() {
 
     return (
         <div>
-            {/* Hero Section - Carousel */}
             <section className="relative bg-[#F5E8DC] py-16 md:py-20 overflow-hidden">
-                <link
-                    rel="stylesheet"
-                    type="text/css"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-                />
-                <link
-                    rel="stylesheet"
-                    type="text/css"
-                    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-                />
-
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="mb-8 md:mb-12">
+                {/* Подложка */}
+                <div className="md:hidden absolute top-1/2 transform -translate-y-1/2 bg-white opacity-30 z-10 p-10 w-full h-full"></div>
+                <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="hidden md:block absolute left-[6px] top-1/2 transform -translate-y-1/2 bg-white opacity-30 z-10 p-10 w-full h-full md:w-[600px] md:h-[350px]"></div>
+                    <div className="absolute z-20 mb-8 md:mb-12 p-14 rounded-2xl top-1/2 transform -translate-y-1/2">
                         <h1
-                            className="text-gray-900 mb-2 text-4xl md:text-5xl lg:text-6xl text-center md:text-left"
+                            className=" text-[#753c01] relative z-20 mb-3 md:mb-6 text-4xl leading-20 md:text-5xl lg:text-6xl text-center md:text-left"
                             style={{
                                 fontFamily: "'Montserrat', sans-serif",
                                 fontWeight: '500',
-                                letterSpacing: '0.02em',
+                                lineHeight: '1.2',
+                                letterSpacing: '0.15em',
                             }}
                         >
-                            АВТОРСКИЕ ДЕСЕРТЫ
+                            АВТОРСКИЕ <br /> ДЕСЕРТЫ
                         </h1>
-                        <p className="text-gray-600 text-sm mt-6 text-center md:mt-0 md:text-left">
-                            Изготовление на заказ десертов любой сложности. Качественные и
-                            натуральные ингредиенты.
+                        <p className="text-[#2b1604] z-20 relative text-sm md:text-lg mt-2 md:mt-6 text-center md:text-left">
+                            Изготовление на заказ десертов любой сложности. <br />
+                            Качественные и натуральные ингредиенты.
                         </p>
                     </div>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <img
+                            className="relative left-[75px] md:left-0 md:w-full md:h-full z-0 scale-170 md:scale-110"
+                            src={cake2}
+                        />
+                    </div>
 
-                    <Slider {...sliderSettings}>
-                        {featuredProducts.map((product, index) => (
-                            <div key={index} className="px-2">
-                                <div className="grid md:grid-cols-2 gap-10 items-center bg-gradient-to-br from-[#f7f1ea] via-white to-[#dfece9] rounded-3xl p-6 md:p-10 border border-white/60">
-                                    {/* Визуальная часть */}
-                                    <div className="relative h-[320px] md:h-[460px] flex items-center justify-center">
-                                        <div className="absolute inset-0">
-                                            <div className="absolute top-4 left-6 w-20 h-20 border border-white/50 rounded-full opacity-70"></div>
-                                            <div className="absolute bottom-6 right-4 w-16 h-16 border border-white/40 rounded-full opacity-60 hidden sm:block"></div>
-                                            <div className="absolute inset-0 bg-gradient-to-br from-[#fcdfee]/70 via-transparent to-[#d6edff]/60 blur-3xl opacity-80"></div>
-                                        </div>
-                                        <div className="relative w-[250px] h-[300px] md:w-[320px] md:h-[400px] rounded-[40px] overflow-hidden border border-white/80 bg-white/85 backdrop-blur-2xl shadow-[0_25px_80px_rgba(10,13,50,0.25)]">
-                                            <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-transparent to-white/20 pointer-events-none"></div>
-                                            <img
-                                                src={product.image}
-                                                alt={product.name}
-                                                className="w-full h-full object-cover scale-110"
-                                            />
-                                        </div>
-                                        <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-2/3 h-12 bg-black/10 blur-3xl rounded-full"></div>
-                                    </div>
-
-                                    {/* Текстовая часть */}
-                                    <div className="space-y-6 text-center md:text-left">
-                                        <div>
-                                            <h2
-                                                className="text-3xl md:text-4xl text-gray-900 mb-3"
-                                                style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 600 }}
-                                            >
-                                                {product.name}
-                                            </h2>
-                                            {product.subtitle && (
-                                                <p className="text-sm uppercase tracking-[0.25em] text-gray-500">
-                                                    {product.subtitle}
-                                                </p>
-                                            )}
-                                        </div>
-                                        <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-                                            <div>
-                                                <p className="text-3xl font-semibold text-[#A67C52]">{product.price}</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </Slider>
                 </div>
             </section>
 

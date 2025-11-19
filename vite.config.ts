@@ -6,7 +6,7 @@
   export default defineConfig({
     plugins: [react()],
     resolve: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'],
       alias: {
         'vaul@1.1.2': 'vaul',
         'sonner@2.0.3': 'sonner',

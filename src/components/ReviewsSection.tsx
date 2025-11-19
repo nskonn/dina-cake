@@ -25,24 +25,19 @@ export function ReviewsSection({ onOrderClick }: ReviewSectionProps) {
     ];
 
     return (
-        <section className="py-20 bg-[#F5E8DC]">
+        <section className="py-10 md:py-20 bg-[#F5E8DC]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2
-                        className="text-gray-900 mb-4"
+                        className="text-gray-900 mb-4 text-4xl md:text-5xl"
                         style={{
-                            fontSize: '48px',
-                            lineHeight: '1.2',
                             fontFamily: "'Montserrat', sans-serif",
                             fontWeight: '500',
                         }}
                     >
                         ОТЗЫВЫ
                     </h2>
-                    <p
-                        className="text-gray-600 max-w-2xl mx-auto"
-                        style={{ fontSize: '20px', lineHeight: '1.6' }}
-                    >
+                    <p className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl">
                         Мы гордимся каждым отзывом и стараемся делать ваши праздники незабываемыми
                     </p>
                 </div>
