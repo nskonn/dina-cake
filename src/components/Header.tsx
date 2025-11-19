@@ -1,30 +1,40 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { ContactModal } from './ContactModal';
 
 export function Header() {
-    const location = useLocation();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [modalOpen, setModalOpen] = useState(false);
 
+    const scrollToSection = (sectionId: string) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setMobileMenuOpen(false);
+        }
+    };
+
     const navLinks = [
-        { name: 'Главная', path: '/' },
-        { name: 'Каталог', path: '/catalog' },
+        { name: 'Каталог', action: () => scrollToSection('catalog') },
+        { name: 'Отзывы', action: () => scrollToSection('reviews') },
+        { name: 'Как заказать?', action: () => scrollToSection('order-steps') },
+        { name: 'Контакты', action: () => scrollToSection('contacts') },
     ];
 
     return (
         <>
-            <header className="bg-[#E0D0BD] border-b border-[#C9B299] sticky top-0 z-50">
+            <header className="bg-[#F5E8DC] border-b border-[#C9B299] sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
                         {/* Логотип */}
                         <Link to="/" className="flex items-center">
                             <span
-                                className="text-[#A67C52] tracking-wide"
+                                className="text-transparent bg-clip-text bg-gradient-to-r from-[#A67C52] via-[#C4956F] to-[#D4A574] tracking-wide"
                                 style={{
-                                    fontFamily: "'Montserrat', sans-serif",
-                                    fontWeight: '600',
+                                    fontFamily: "'Dancing Script', cursive",
+                                    fontWeight: '700',
+                                    fontSize: '32px',
                                 }}
                             >
                                 Dina's cake
@@ -34,17 +44,14 @@ export function Header() {
                         {/* Навигация для десктопа */}
                         <nav className="hidden md:flex items-center gap-8">
                             {navLinks.map(link => (
-                                <Link
-                                    key={link.path}
-                                    to={link.path}
-                                    className={`transition-colors ${
-                                        location.pathname === link.path
-                                            ? 'text-[#A67C52]'
-                                            : 'text-gray-700 hover:text-[#A67C52]'
-                                    }`}
+                                <button
+                                    key={link.name}
+                                    type="button"
+                                    onClick={link.action}
+                                    className="text-gray-700 hover:text-[#A67C52] transition-colors"
                                 >
                                     {link.name}
-                                </Link>
+                                </button>
                             ))}
                             <button
                                 type="button"
@@ -69,18 +76,14 @@ export function Header() {
                         <div className="md:hidden py-4 border-t border-[#C9B299]">
                             <nav className="flex flex-col gap-4">
                                 {navLinks.map(link => (
-                                    <Link
-                                        key={link.path}
-                                        to={link.path}
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className={`transition-colors ${
-                                            location.pathname === link.path
-                                                ? 'text-[#A67C52]'
-                                                : 'text-gray-700 hover:text-[#A67C52]'
-                                        }`}
+                                    <button
+                                        key={link.name}
+                                        type="button"
+                                        onClick={link.action}
+                                        className="text-left text-gray-700 hover:text-[#A67C52] transition-colors"
                                     >
                                         {link.name}
-                                    </Link>
+                                    </button>
                                 ))}
                                 <button
                                     type="button"

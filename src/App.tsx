@@ -10,7 +10,7 @@ export default function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/catalog" element={<Catalog />} />
+          {/*<Route path="/catalog" element={<Catalog />} />*/}
         </Routes>
       </div>
     </BrowserRouter>
