@@ -14,6 +14,7 @@ export const FeaturedProductCard: React.FC<FeaturedProductCardProps> = ({ produc
                 <img
                     src={product.image}
                     alt={product.name}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
@@ -27,10 +28,11 @@ export const FeaturedProductCard: React.FC<FeaturedProductCardProps> = ({ produc
                         className="text-white"
                         style={{
                             fontFamily: "'Montserrat', sans-serif",
-                            fontWeight: '600',
+                            fontWeight: '500',
+                            letterSpacing: '0.04em',
                         }}
                     >
-                        {product.price} кг.
+                        {product.price} {product.um}
                     </p>
                 </div>
             </div>

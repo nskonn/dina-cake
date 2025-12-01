@@ -18,7 +18,7 @@ export function OrderStepsSection({ onOrderClick }: OrderStepsSectionProps) {
                     >
                         КАК СДЕЛАТЬ ЗАКАЗ
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl">
                         Простой процесс оформления заказа в несколько шагов
                     </p>
                 </div>

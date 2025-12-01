@@ -38,7 +38,7 @@ export function ReviewsSection({ onOrderClick }: ReviewSectionProps) {
                         ОТЗЫВЫ
                     </h2>
                     <p className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl">
-                        Мы гордимся каждым отзывом и стараемся делать ваши праздники незабываемыми
+                        Мы рады каждому отзыву, т.к. стараемся делать ваши праздники яркими и незабываемыми
                     </p>
                 </div>
 

@@ -6,6 +6,7 @@ export type CatalogProduct = {
     price: string;
     image: string;
     badge: string;
+    um: string;
     category: CatalogCategory;
     subcategory: string;
 };

@@ -21,7 +21,7 @@ export function ContactsSection() {
                     >
                         КОНТАКТЫ
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto  text-lg md:text-xl">
+                    <p className="text-gray-600 max-w-2xl mx-auto text-lg md:text-xl">
                         Свяжитесь с нами удобным способом, и мы ответим на все ваши вопросы
                     </p>
                 </div>

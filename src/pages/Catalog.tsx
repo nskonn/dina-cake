@@ -1,115 +1,29 @@
 import { useState } from 'react';
-import { ProductCard } from '../components/ProductCard';
 import { ContactModal } from '../components/ContactModal';
 import { Footer } from '../components/Footer';
-import { FeaturedProductCard } from '../entity/Product';
-import { CakePopsSubcategory, CatalogCategory } from '../components/CatalogSection/model/enums';
+import { CatalogSection } from '../components/CatalogSection';
 
 export function Catalog() {
   const [modalOpen, setModalOpen] = useState(false);
-
-  const allProducts = [
-      {
-          title: 'Элегантный торт',
-          description: 'Идеально для свадеб и торжественных событий',
-          price: '5000 ₽',
-          image: 'https://images.unsplash.com/photo-1672081211046-f494525f9a1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwY2FrZXxlbnwxfHx8fDE3NjI3MTE4MzB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-          badge: 'Для праздника',
-          category: CatalogCategory.CakePops,
-          subcategory: CakePopsSubcategory.Vanilla,
-      },
-      {
-          title: 'Свадебный торт',
-          description: 'Многоярусные композиции для вашего особенного дня',
-          price: '8000 ₽',
-          image: 'https://images.unsplash.com/photo-1535254973040-607b474cb50d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWRkaW5nJTIwY2FrZXxlbnwxfHx8fDE3NjI1OTQzMjZ8MA&ixlib=rb-4.1.0&q=80&w=1080',
-          badge: 'Для праздника',
-          category: CatalogCategory.CakePops,
-          subcategory: CakePopsSubcategory.Vanilla,
-      },
-      {
-          title: 'Шоколадный торт',
-          description: 'Насыщенный вкус для истинных ценителей',
-          price: '3500 ₽',
-          image: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBjYWtlfGVufDF8fHx8MTc2MjYxNTc0NHww&ixlib=rb-4.1.0&q=80&w=1080',
-          badge: 'Для праздника',
-          category: CatalogCategory.CakePops,
-          subcategory: CakePopsSubcategory.Vanilla,
-      },
-      {
-          title: 'Праздничный торт',
-          description: 'Яркое оформление для дней рождений',
-          price: '4000 ₽',
-          image: 'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiaXJ0aGRheSUyMGNha2V8ZW58MXx8fHwxNzYyNjk2NTc2fDA&ixlib=rb-4.1.0&q=80&w=1080',
-      },
-      {
-          title: 'Капкейки',
-          description: 'Миниатюрные десерты для любого события',
-          price: '250 ₽/шт',
-          image: 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXBjYWtlc3xlbnwxfHx8fDE3NjI3MTE4MzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      },
-      {
-          title: 'Макаронс',
-          description: 'Французские пирожные в ассортименте',
-          price: '150 ₽/шт',
-          image: 'https://images.unsplash.com/photo-1569864358642-9d1684040f43?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYWNhcm9uc3xlbnwxfHx8fDE3NjI3MTE4MzF8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      },
-      {
-          title: 'Клубничный торт',
-          description: 'Легкий бисквит со свежими ягодами',
-          price: '4500 ₽',
-          image: 'https://images.unsplash.com/photo-1602663491496-73f07481dbea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJhd2JlcnJ5JTIwY2FrZXxlbnwxfHx8fDE3NjI2NjQyNzB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      },
-      {
-          title: 'Пирожные ассорти',
-          description: 'Изысканные десерты для гурманов',
-          price: '300 ₽/шт',
-          image: 'https://images.unsplash.com/photo-1669630367800-b2c3ae70528e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXN0cnklMjBkZXNzZXJ0fGVufDF8fHx8MTc2MjY5Mjg5OHww&ixlib=rb-4.1.0&q=80&w=1080',
-      },
-      {
-          title: 'Торт "Красный бархат"',
-          description: 'Классический американский десерт',
-          price: '3800 ₽',
-          image: 'https://images.unsplash.com/photo-1672081211046-f494525f9a1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVnYW50JTIwY2FrZXxlbnwxfHx8fDE3NjI3MTE4MzB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      },
-      {
-          title: 'Медовик',
-          description: 'Традиционный торт с медовыми коржами',
-          price: '3200 ₽',
-          image: 'https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBjYWtlfGVufDF8fHx8MTc2MjYxNTc0NHww&ixlib=rb-4.1.0&q=80&w=1080',
-      },
-      {
-          title: 'Наполеон',
-          description: 'Классический слоеный торт с кремом',
-          price: '2800 ₽',
-          image: 'https://images.unsplash.com/photo-1669630367800-b2c3ae70528e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwYXN0cnklMjBkZXNzZXJ0fGVufDF8fHx8MTc2MjY5Mjg5OHww&ixlib=rb-4.1.0&q=80&w=1080',
-      },
-      {
-          title: 'Чизкейк Нью-Йорк',
-          description: 'Нежный сырный торт с ягодным соусом',
-          price: '4200 ₽',
-          image: 'https://images.unsplash.com/photo-1602663491496-73f07481dbea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJhd2JlcnJ5JTIwY2FrZXxlbnwxfHx8fDE3NjI2NjQyNzB8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      },
-  ];
 
   return (
       <div>
           {/* Hero каталога */}
           <section className="pt-16">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="text-center">
-                      <h1
-                          className="text-gray-900 mb-4 text-4xl md:text-5xl"
+                  <div className="">
+                      <h2
+                          className="text-gray-900 text-4xl md:text-5xl md:mb-4"
                           style={{
                               fontFamily: "'Montserrat', sans-serif",
                               fontWeight: '500',
-                              letterSpacing: '-0.02em',
+                              letterSpacing: '0.02em',
                           }}
                       >
-                          Каталог
-                      </h1>
+                          КАТАЛОГ
+                      </h2>
                       <p
-                          className="text-gray-600 max-w-2xl mx-auto"
+                          className="text-gray-600 max-w-2xl"
                           style={{ fontSize: '20px', lineHeight: '1.6' }}
                       >
                           Полный ассортимент наших кондитерских изделий
@@ -118,20 +32,7 @@ export function Catalog() {
               </div>
           </section>
 
-          {/* Сетка продуктов */}
-          <section className="py-16 bg-[#F5E8DC]">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                      {allProducts.map((product, index) => (
-                          <FeaturedProductCard
-                              key={index}
-                              product={product}
-                              onOrderClick={() => setModalOpen(true)}
-                          />
-                      ))}
-                  </div>
-              </div>
-          </section>
+          <CatalogSection onOrderClick={() => setModalOpen(true)} />
 
           {/* Призыв к действию */}
           <section className="py-20 bg-[#A67C52] text-white">

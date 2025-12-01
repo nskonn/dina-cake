@@ -9,30 +9,42 @@ export enum CatalogCategory {
 
 export enum CakesSubcategory {
     All = 'Все',
-    Chukepc = 'CHUKEPC',
+    Chukepc = 'Сникерс',
     CherrySlice = 'ВИШНЁВЫЙ ЛОМТИК',
     Ferrero = 'ФЕРРЕРО',
     CaptainCookiesClassic = 'Капитан Кукис (классический)',
     CaptainCookiesCoffee = 'Капитан Кукис (кофейный)',
-    PistachioRaspberry = 'Фисташка-малина',
+    PistachioRaspberry = 'Фисташка - Малина',
     MilkGirl = 'Молочная девочка',
     BerryCloud = 'Ягодное облако',
     RedVelvet = 'Красный бархат',
     SpicedCarrot = 'Пряная морковь',
-    PoppyLemon = 'Мак-лимон',
-    HoneyClassic = 'МЕдОВИК (классический)',
-    HoneyRaspberry = 'Медовик - малина',
+    PoppyLemon = 'Мак - Лимон',
+    HoneyClassic = 'Медовик (классический)',
+    HoneyRaspberry = 'Медовик - Малина',
 }
+
+// export enum BentoCakesSubcategory {
+//     All = 'Все',
+//     Snickers = 'Сникерс',
+//     RedVelvetStrawberry = 'Красный бархат (клубника)',
+//     RedVelvetMangoPassion = 'Красный бархат (манго-маракуйя)',
+//     PoppyLemon = 'Мак-лимон',
+//     VanillaStrawberry = 'Ваниль - Клубника',
+//     VanillaRaspberry = 'Ваниль - Малина',
+//     CherrySlice = 'Вишневый ломтик',
+// }
 
 export enum BentoCakesSubcategory {
     All = 'Все',
-    Snickers = 'Сникерс',
-    RedVelvetStrawberry = 'Красный бархат (клубника)',
-    RedVelvetMangoPassion = 'Красный бархат (манго-маракуйя)',
+    Exotic = 'Экзотик',
+    Tiramisu = 'Тирамису',
+    BanoffeePie = 'Баннофи-пай',
+    CaptainCookies = 'Капитан Кукис',
     PoppyLemon = 'Мак-лимон',
-    VanillaStrawberry = 'Ваниль-клубника',
-    VanillaRaspberry = 'Ваниль малина',
-    CherrySlice = 'Вишневый ломтик',
+    Raffaello = 'Рафаэлло',
+    PistachioChocolate = 'Фисташка-шоколад',
+    BerryBoom = 'Ягодный бум',
 }
 
 export enum CupcakesSubcategory {
@@ -40,7 +52,7 @@ export enum CupcakesSubcategory {
     Snickers = 'Сникерс',
     ChocolateCombo = 'Шоколадное комбо',
     CherryChocolate = 'Вишня в шоколаде',
-    LemonRaspberry = 'Лимон-малина',
+    LemonRaspberry = 'Лимон - Малина',
     SpicedCarrot = 'Пряная морковь',
 }
 
@@ -48,20 +60,20 @@ export enum TrifleSubcategory {
     All = 'Все',
     Snickers = 'Сникерс',
     CherrySlice = 'Вишневый ломтик',
-    PoppyLemon = 'Мак-лимон',
+    PoppyLemon = 'Мак - Лимон',
     SpicedCarrot = 'Пряная морковь',
-    VanillaRaspberry = 'Ваниль-малина',
-    VanillaStrawberry = 'Ваниль-клубника',
+    VanillaRaspberry = 'Ваниль - Малина',
+    VanillaStrawberry = 'Ваниль - Клубника',
 }
 
 export enum EskimoSubcategory {
     All = 'Все',
     Snickers = 'Сникерс',
     CherrySlice = 'Вишневый ломтик',
-    PoppyLemon = 'Мак-лимон',
+    PoppyLemon = 'Мак - Лимон',
     SpicedCarrot = 'Пряная морковь',
-    VanillaRaspberry = 'Ваниль-малина',
-    VanillaStrawberry = 'Ваниль-клубника',
+    VanillaRaspberry = 'Ваниль - Малина',
+    VanillaStrawberry = 'Ваниль - Клубника',
 }
 
 export enum CakePopsSubcategory {

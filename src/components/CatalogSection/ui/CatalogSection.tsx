@@ -14,101 +14,12 @@ import {
 } from '../model/enums';
 import type { CatalogProduct } from '../model/types';
 import { FeaturedProductCard } from '../../../entity/Product';
+import { CAKE_CATALOG } from '../../../data/catalog_data';
+import { BENTO_CATALOG } from '../../../data/catalog_data';
 
 export type CatalogSectionProps = {
     onOrderClick: () => void;
 };
-
-const FEATURED_PRODUCTS: CatalogProduct[] = [
-    {
-        name: 'Торт «Ананас-лайм» муссовый',
-        description:
-            'Муссовый торт на основе ананасового йогурта и натуральных сливок с бисквитом из сгущенного молока и мятно-лаймовой прослойкой. Украшен дольками свежего ананаса, глазурью манго-маракуйя и ароматной цедрой лайма.',
-        price: '2 900 р.',
-        image:
-            'https://images.unsplash.com/photo-1543509338-c6faf7aeb69c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aGl0ZSUyMGNyZWFtJTIwY2FrZXxlbnwxfHx8fDE3NjI3MTUwNDR8MA&ixlib=rb-4.1.0&q=80&w=1080',
-        badge: 'Новинка',
-        category: CatalogCategory.Cakes,
-        subcategory: CakesSubcategory.BerryCloud,
-    },
-    {
-        name: '«Манго-кейк»',
-        description:
-            'Воздушный бисквит пропитанный сахарным сиропом с коньяком, с прослойкой малинового конфи, экзотического крема манго-маракуйя и сливочно-малиновой начинки. Крем торта сделан на основе творожного сыра, сыра Маскарпоне и натуральных сливок.',
-        price: '4 100 р.',
-        image:
-            'https://images.unsplash.com/photo-1730672558646-c65c4784dd16?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5ZWxsb3clMjBjYWtlJTIwZGVzc2VydHxlbnwxfHx8fDE3NjI3MTUwNDN8MA&ixlib=rb-4.1.0&q=80&w=1080',
-        badge: 'Сезонное',
-        category: CatalogCategory.Cakes,
-        subcategory: CakesSubcategory.RedVelvet,
-    },
-    {
-        name: '«Творожное суфле» в глазури',
-        description:
-            'Торт из воздушной мягкой меренги с нежным творогом на тонких коржах на основе белого сгущенного молока. Покрыт глазурью гурмэ из темного шоколада. Торт рассчитан на 8 порций.',
-        price: '2 200 р.',
-        image:
-            'https://images.unsplash.com/photo-1761637604976-40612bc4544c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjaG9jb2xhdGUlMjBjYWtlJTIwcm91bmR8ZW58MXx8fHwxNzYyNzE1MDQzfDA&ixlib=rb-4.1.0&q=80&w=1080',
-        badge: 'Новинка',
-        category: CatalogCategory.Cakes,
-        subcategory: CakesSubcategory.MilkGirl,
-    },
-    {
-        name: 'Бенто «Сникерс»',
-        description:
-            'Мини-торт с шоколадным бисквитом, карамельным кремом и хрустящей прослойкой из арахиса. Идеальный десерт на двоих.',
-        price: '1 200 р.',
-        image:
-            'https://images.unsplash.com/photo-1481391032119-d89fee407e44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-        badge: 'Бестселлер',
-        category: CatalogCategory.BentoCakes,
-        subcategory: BentoCakesSubcategory.Snickers,
-    },
-    {
-        name: 'Капкейки «Шоколадное комбо»',
-        description:
-            'Набор из шести капкейков с шоколадным бисквитом, ганашем и кремом на основе сыра маскарпоне.',
-        price: '1 650 р.',
-        image:
-            'https://images.unsplash.com/photo-1481391032119-d89fee407e44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-        badge: 'Хит',
-        category: CatalogCategory.Cupcakes,
-        subcategory: CupcakesSubcategory.ChocolateCombo,
-    },
-    {
-        name: 'Трайфл «Ваниль-клубника»',
-        description:
-            'Слоёный десерт в стаканчике с ванильным бисквитом, свежей клубникой и нежным крем-сыром.',
-        price: '450 р.',
-        image:
-            'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-        badge: 'Лето',
-        category: CatalogCategory.Trifle,
-        subcategory: TrifleSubcategory.VanillaStrawberry,
-    },
-    {
-        name: 'Эскимо «Мак-лимон»',
-        description:
-            'Авторское эскимо на палочке с маковым бисквитом, лимонным курдом и белым шоколадом.',
-        price: '320 р.',
-        image:
-            'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-        badge: 'Новое',
-        category: CatalogCategory.Eskimo,
-        subcategory: EskimoSubcategory.PoppyLemon,
-    },
-    {
-        name: 'Кейк-попсы «Ванильные»',
-        description:
-            'Нежные шарики из ванильного бисквита на палочке, покрытые белым шоколадом и хрустящей посыпкой.',
-        price: '150 р.',
-        image:
-            'https://images.unsplash.com/photo-1505253668822-42074d58a7f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080',
-        badge: 'Для праздника',
-        category: CatalogCategory.CakePops,
-        subcategory: CakePopsSubcategory.Vanilla,
-    },
-];
 
 export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
     const navigate = useNavigate();
@@ -135,7 +46,7 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                     <button
                         key={subcategory}
                         onClick={() => setSelectedSubcategory(subcategory)}
-                        className={`shrink-0 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-colors border ${
+                        className={`shrink-0 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-medium transition-colors border ${
                             selectedSubcategory === subcategory
                                 ? 'bg-gray-900 border-gray-900 text-white shadow-sm'
                                 : 'bg-white/80 border-gray-200 text-gray-600 hover:text-gray-900'
@@ -152,7 +63,7 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
         const subcategories = CATEGORY_SUBCATEGORIES[selectedCategory];
         const allValue = subcategories?.[0];
 
-        return FEATURED_PRODUCTS.filter(product => {
+        return CAKE_CATALOG.filter(product => {
             if (product.category !== selectedCategory) {
                 return false;
             }
@@ -210,15 +121,6 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                     {filteredProducts.map(product => (
                         <FeaturedProductCard key={product.name} product={product} onOrderClick={onOrderClick} />
                     ))}
-                </div>
-
-                <div className="text-center">
-                    <button
-                        onClick={() => navigate('/catalog')}
-                        className="bg-[#A67C52] text-white px-8 py-3 hover:bg-[#8B6640] transition-colors rounded-lg"
-                    >
-                        Показать больше
-                    </button>
                 </div>
             </div>
         </section>
