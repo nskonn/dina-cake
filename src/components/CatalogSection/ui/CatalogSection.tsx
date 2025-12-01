@@ -10,12 +10,11 @@ import {
     CupcakesSubcategory,
     TrifleSubcategory,
     EskimoSubcategory,
-    CakePopsSubcategory,
 } from '../model/enums';
 import type { CatalogProduct } from '../model/types';
 import { FeaturedProductCard } from '../../../entity/Product';
 import { CAKE_CATALOG } from '../../../data/catalog_data';
-import { BENTO_CATALOG } from '../../../data/catalog_data';
+import { MUSS_BENTO_CATALOG } from '../../../data/catalog_data';
 
 export type CatalogSectionProps = {
     onOrderClick: () => void;
@@ -65,8 +64,7 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
 
         // Выбираем нужный каталог в зависимости от категории
         const currentCatalog =
-            selectedCategory === CatalogCategory.BentoCakes ? BENTO_CATALOG : CAKE_CATALOG;
-
+            selectedCategory === CatalogCategory.MussBentoCakes ? MUSS_BENTO_CATALOG : CAKE_CATALOG;
         return currentCatalog.filter(product => {
             if (product.category !== selectedCategory) {
                 return false;
