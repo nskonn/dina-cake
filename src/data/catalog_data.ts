@@ -2,6 +2,7 @@ import {
     BentoCakesSubcategory,
     CakesSubcategory,
     CatalogCategory,
+    EskimoSubcategory,
     MussBentoCakesSubcategory,
 } from '../components/CatalogSection/model/enums';
 
@@ -197,5 +198,53 @@ export const MUSS_BENTO_CATALOG = [
         category: CatalogCategory.MussBentoCakes,
         um: 'шт.',
         subcategory: MussBentoCakesSubcategory.BerryBoom,
+    },
+];
+
+export const ESCIMO_CATALOG = [
+    {
+        name: 'Сникерс',
+        description: 'Карамель, орехи и шоколад на палочке',
+        price: '320 ₽',
+        image: '/assets/escimo/сникерс.jpg',
+        category: CatalogCategory.Eskimo,
+        um: 'шт.',
+        subcategory: EskimoSubcategory.Snickers,
+    },
+    {
+        name: 'Вишневый ломтик',
+        description: 'Яркая вишня и нежный крем в формате эскимо',
+        price: '320 ₽',
+        image: '/assets/escimo/вишневый-ломтик.jpg',
+        category: CatalogCategory.Eskimo,
+        um: 'шт.',
+        subcategory: EskimoSubcategory.CherrySlice,
+    },
+    {
+        name: 'Мак-лимон',
+        description: 'Освежающий лимонный бисквит с маком',
+        price: '320 ₽',
+        image: '/assets/escimo/мак-лимон.jpg',
+        category: CatalogCategory.Eskimo,
+        um: 'шт.',
+        subcategory: EskimoSubcategory.PoppyLemon,
+    },
+    {
+        name: 'Ваниль-малина',
+        description: 'Нежный ванильный вкус с сочной малиной',
+        price: '320 ₽',
+        image: '/assets/escimo/ваниль-малина-клубника.jpg',
+        category: CatalogCategory.Eskimo,
+        um: 'шт.',
+        subcategory: EskimoSubcategory.VanillaRaspberry,
+    },
+    {
+        name: 'Красный бархат - Клубника',
+        description: 'Нежный вкус клубники и маракуи',
+        price: '320 ₽',
+        image: '/assets/escimo/красный-бархат.jpg',
+        category: CatalogCategory.Eskimo,
+        um: 'шт.',
+        subcategory: EskimoSubcategory.RedVelvetStrawberry,
     },
 ];

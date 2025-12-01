@@ -1,20 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import {
-    CatalogCategory,
-    CATEGORY_DISPLAY_ORDER,
-    CATEGORY_SUBCATEGORIES,
-    CakesSubcategory,
-    BentoCakesSubcategory,
-    CupcakesSubcategory,
-    TrifleSubcategory,
-    EskimoSubcategory,
-} from '../model/enums';
-import type { CatalogProduct } from '../model/types';
+import { CatalogCategory, CATEGORY_DISPLAY_ORDER, CATEGORY_SUBCATEGORIES } from '../model/enums';
 import { FeaturedProductCard } from '../../../entity/Product';
-import { CAKE_CATALOG } from '../../../data/catalog_data';
-import { MUSS_BENTO_CATALOG } from '../../../data/catalog_data';
+import { CAKE_CATALOG, ESCIMO_CATALOG, MUSS_BENTO_CATALOG } from '../../../data/catalog_data';
+import { CatalogProduct } from '../model/types';
 
 export type CatalogSectionProps = {
     onOrderClick: () => void;
@@ -22,7 +12,9 @@ export type CatalogSectionProps = {
 
 export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
     const navigate = useNavigate();
-    const [selectedCategory, setSelectedCategory] = useState<CatalogCategory>(CatalogCategory.Cakes);
+    const [selectedCategory, setSelectedCategory] = useState<CatalogCategory>(
+        CatalogCategory.Cakes,
+    );
     const [selectedSubcategory, setSelectedSubcategory] = useState<string>(
         CATEGORY_SUBCATEGORIES[CatalogCategory.Cakes][0],
     );
@@ -63,8 +55,12 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
         const allValue = subcategories?.[0];
 
         // Выбираем нужный каталог в зависимости от категории
-        const currentCatalog =
-            selectedCategory === CatalogCategory.MussBentoCakes ? MUSS_BENTO_CATALOG : CAKE_CATALOG;
+        let currentCatalog: CatalogProduct[] = CAKE_CATALOG;
+        if (selectedCategory === CatalogCategory.MussBentoCakes) {
+            currentCatalog = MUSS_BENTO_CATALOG;
+        } else if (selectedCategory === CatalogCategory.Eskimo) {
+            currentCatalog = ESCIMO_CATALOG;
+        }
         return currentCatalog.filter(product => {
             if (product.category !== selectedCategory) {
                 return false;
@@ -121,11 +117,14 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                     )}
 
                     {filteredProducts.map(product => (
-                        <FeaturedProductCard key={product.name} product={product} onOrderClick={onOrderClick} />
+                        <FeaturedProductCard
+                            key={product.name}
+                            product={product}
+                            onOrderClick={onOrderClick}
+                        />
                     ))}
                 </div>
             </div>
         </section>
     );
 }
-

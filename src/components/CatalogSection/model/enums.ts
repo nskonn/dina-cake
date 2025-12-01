@@ -60,9 +60,8 @@ export enum EskimoSubcategory {
     Snickers = 'Сникерс',
     CherrySlice = 'Вишневый ломтик',
     PoppyLemon = 'Мак - Лимон',
-    SpicedCarrot = 'Пряная морковь',
     VanillaRaspberry = 'Ваниль - Малина',
-    VanillaStrawberry = 'Ваниль - Клубника',
+    RedVelvetStrawberry = 'Красный бархат - клубника',
 }
 
 export enum MacaronsSubcategory {
