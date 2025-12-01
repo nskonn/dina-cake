@@ -19,9 +19,11 @@ export const FeaturedProductCard: React.FC<FeaturedProductCardProps> = ({ produc
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/10 to-transparent" />
 
-                <div className="absolute top-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-900">
-                    {product.badge}
-                </div>
+                {product.badge && (
+                    <div className="absolute top-4 left-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gray-900">
+                        {product.badge}
+                    </div>
+                )}
 
                 <div className="absolute bottom-4 left-4 bg-white/20 backdrop-blur-sm px-4 py-2 rounded shadow-lg">
                     <p

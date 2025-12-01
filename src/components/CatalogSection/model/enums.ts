@@ -4,7 +4,6 @@ export enum CatalogCategory {
     Cupcakes = 'Капкейки',
     Trifle = 'Трайфл',
     Eskimo = 'Эскимо',
-    CakePops = 'Кейк-попс',
 }
 
 export enum CakesSubcategory {
@@ -23,17 +22,6 @@ export enum CakesSubcategory {
     HoneyClassic = 'Медовик (классический)',
     HoneyRaspberry = 'Медовик - Малина',
 }
-
-// export enum BentoCakesSubcategory {
-//     All = 'Все',
-//     Snickers = 'Сникерс',
-//     RedVelvetStrawberry = 'Красный бархат (клубника)',
-//     RedVelvetMangoPassion = 'Красный бархат (манго-маракуйя)',
-//     PoppyLemon = 'Мак-лимон',
-//     VanillaStrawberry = 'Ваниль - Клубника',
-//     VanillaRaspberry = 'Ваниль - Малина',
-//     CherrySlice = 'Вишневый ломтик',
-// }
 
 export enum BentoCakesSubcategory {
     All = 'Все',
@@ -76,20 +64,12 @@ export enum EskimoSubcategory {
     VanillaStrawberry = 'Ваниль - Клубника',
 }
 
-export enum CakePopsSubcategory {
-    All = 'Все',
-    Poppy = 'Маковый',
-    Vanilla = 'Ванильный',
-    Chocolate = 'Шоколадный',
-}
-
 export const CATEGORY_DISPLAY_ORDER: CatalogCategory[] = [
     CatalogCategory.Cakes,
     CatalogCategory.BentoCakes,
     CatalogCategory.Cupcakes,
     CatalogCategory.Trifle,
     CatalogCategory.Eskimo,
-    CatalogCategory.CakePops,
 ];
 
 export const CATEGORY_SUBCATEGORIES: Record<CatalogCategory, string[]> = {
@@ -98,6 +78,5 @@ export const CATEGORY_SUBCATEGORIES: Record<CatalogCategory, string[]> = {
     [CatalogCategory.Cupcakes]: Object.values(CupcakesSubcategory),
     [CatalogCategory.Trifle]: Object.values(TrifleSubcategory),
     [CatalogCategory.Eskimo]: Object.values(EskimoSubcategory),
-    [CatalogCategory.CakePops]: Object.values(CakePopsSubcategory),
 };
 

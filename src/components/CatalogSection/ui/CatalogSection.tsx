@@ -63,7 +63,11 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
         const subcategories = CATEGORY_SUBCATEGORIES[selectedCategory];
         const allValue = subcategories?.[0];
 
-        return CAKE_CATALOG.filter(product => {
+        // Выбираем нужный каталог в зависимости от категории
+        const currentCatalog =
+            selectedCategory === CatalogCategory.BentoCakes ? BENTO_CATALOG : CAKE_CATALOG;
+
+        return currentCatalog.filter(product => {
             if (product.category !== selectedCategory) {
                 return false;
             }

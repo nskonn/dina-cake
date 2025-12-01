@@ -1,6 +1,5 @@
 import {
     BentoCakesSubcategory,
-    CakePopsSubcategory,
     CakesSubcategory,
     CatalogCategory,
 } from '../components/CatalogSection/model/enums';
@@ -82,7 +81,7 @@ export const CAKE_CATALOG = [
         name: 'Пряная морковь',
         description: 'Ароматная, пряная, мягкая',
         price: '5000 ₽',
-        image: '/assets/cake/prjanaja-morkov.jpg',
+        image: '/assets/cake/пряная-морковь.png',
         category: CatalogCategory.Cakes,
         um: 'кг.',
         subcategory: CakesSubcategory.SpicedCarrot,
@@ -114,6 +113,15 @@ export const CAKE_CATALOG = [
         um: 'кг.',
         subcategory: CakesSubcategory.CherrySlice,
     },
+    {
+        name: 'Медовик малина',
+        description: 'Мед, малина и крем',
+        price: '5000 ₽',
+        image: '/assets/cake/медовик-малина.jpg',
+        category: CatalogCategory.Cakes,
+        um: 'кг.',
+        subcategory: CakesSubcategory.HoneyRaspberry,
+    },
 ];
 
 export const BENTO_CATALOG = [
@@ -130,7 +138,7 @@ export const BENTO_CATALOG = [
         name: 'Тирамису',
         description: 'Классический итальянский вкус в формате бенто',
         price: '2200 ₽',
-        image: '/assets/bento/tiramisu.jpg',
+        image: '/assets/bento/тирамису.png',
         category: CatalogCategory.BentoCakes,
         um: 'шт.',
         subcategory: BentoCakesSubcategory.Tiramisu,
@@ -184,7 +192,7 @@ export const BENTO_CATALOG = [
         name: 'Ягодный бум',
         description: 'Сочный микс из свежих лесных ягод',
         price: '2200 ₽',
-        image: '/assets/bento/ягодный-бум.jpg',
+        image: '/assets/bento/ягодный.jpg',
         category: CatalogCategory.BentoCakes,
         um: 'шт.',
         subcategory: BentoCakesSubcategory.BerryBoom,
