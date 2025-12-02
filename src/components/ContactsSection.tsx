@@ -2,10 +2,10 @@ import { Phone, MessageCircle, Send, Instagram } from 'lucide-react';
 
 export function ContactsSection() {
     const contactInfo = {
-        phone: '+7 (999) 123-45-67',
-        whatsapp: '+79991234567',
-        telegram: 'dinascake',
-        instagram: 'dinascake',
+        phone: '+79185471409',
+        whatsapp: '+79185471409',
+        telegram: 'Dinas_cake',
+        instagram: 'dina.s_cake',
     };
 
     return (
@@ -35,8 +35,10 @@ export function ContactsSection() {
                             <Phone size={24} />
                         </div>
                         <div className="text-center">
-                            <div className="text-gray-500 text-sm mb-1 text-left  md:text-center">Телефон</div>
-                            <div className="text-gray-900">{contactInfo.phone}</div>
+                            <div className="text-gray-500 text-sm mb-1 text-left  md:text-center">
+                                Телефон
+                            </div>
+                            <div className="text-gray-900"> +7 (918) 547-14-09</div>
                         </div>
                     </a>
 
@@ -50,7 +52,9 @@ export function ContactsSection() {
                             <MessageCircle size={24} />
                         </div>
                         <div className="text-center">
-                            <div className="text-gray-500 text-sm mb-1 text-left  md:text-center">WhatsApp</div>
+                            <div className="text-gray-500 text-sm mb-1 text-left  md:text-center">
+                                WhatsApp
+                            </div>
                             <div className="text-gray-900">{contactInfo.phone}</div>
                         </div>
                     </a>
@@ -65,13 +69,15 @@ export function ContactsSection() {
                             <Send size={24} />
                         </div>
                         <div className="text-center">
-                            <div className="text-gray-500 text-sm mb-1  text-left  md:text-center">Telegram</div>
+                            <div className="text-gray-500 text-sm mb-1  text-left  md:text-center">
+                                Telegram
+                            </div>
                             <div className="text-gray-900">@{contactInfo.telegram}</div>
                         </div>
                     </a>
 
                     <a
-                        href={`https://instagram.com/${contactInfo.instagram}`}
+                        href={`https://www.instagram.com/dina.s_cake`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex md:flex-col md:items-center gap-4 p-6 bg-white rounded-2xl hover:shadow-lg transition-shadow group"
@@ -80,7 +86,9 @@ export function ContactsSection() {
                             <Instagram size={24} />
                         </div>
                         <div className="text-center">
-                            <div className="text-gray-500 text-sm mb-1 text-left md:text-center">Instagram</div>
+                            <div className="text-gray-500 text-sm mb-1 text-left md:text-center">
+                                Instagram
+                            </div>
                             <div className="text-gray-900">@{contactInfo.instagram}</div>
                         </div>
                     </a>

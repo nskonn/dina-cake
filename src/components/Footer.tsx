@@ -1,12 +1,11 @@
-import {ContactModal} from "./ContactModal";
 import { Instagram, MessageCircle, Send } from 'lucide-react';
 
 export const Footer = () => {
     const contactInfo = {
-        phone: '+7 (999) 123-45-67',
-        whatsapp: '+79991234567',
-        telegram: 'dinascake',
-        instagram: 'dinascake',
+        phone: '+79185471409',
+        whatsapp: '+79185471409',
+        telegram: 'Dinas_cake',
+        instagram: 'dina.s_cake',
     };
 
     return (
