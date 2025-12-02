@@ -6,6 +6,7 @@ import { FeaturedProductCard } from '../../../entity/Product';
 import {
     BENTO_CATALOG,
     CAKE_CATALOG,
+    CUPCAKES_CATALOG,
     ESCIMO_CATALOG,
     MUSS_BENTO_CATALOG,
     TRIFLE_CATALOG,
@@ -66,8 +67,12 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
             currentCatalog = MUSS_BENTO_CATALOG;
         } else if (selectedCategory === CatalogCategory.Eskimo) {
             currentCatalog = ESCIMO_CATALOG;
+        } else if (selectedCategory === CatalogCategory.BentoCakes) {
+            currentCatalog = BENTO_CATALOG;
         } else if (selectedCategory === CatalogCategory.Trifle) {
             currentCatalog = TRIFLE_CATALOG;
+        } else if (selectedCategory === CatalogCategory.Cupcakes) {
+            currentCatalog = CUPCAKES_CATALOG;
         }
         return currentCatalog.filter(product => {
             if (product.category !== selectedCategory) {
@@ -114,18 +119,21 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                     ))}
                 </div>
 
-                {![CatalogCategory.BentoCakes, CatalogCategory.Trifle].includes(selectedCategory) &&
-                    renderSubcategories(selectedCategory)}
+                {![
+                    CatalogCategory.BentoCakes,
+                    CatalogCategory.Trifle,
+                    CatalogCategory.Cupcakes,
+                ].includes(selectedCategory) && renderSubcategories(selectedCategory)}
 
-                {selectedCategory === CatalogCategory.BentoCakes && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                        <FeaturedProductCard
-                            key={BENTO_CATALOG[0].name}
-                            product={BENTO_CATALOG[0]}
-                            onOrderClick={onOrderClick}
-                        />
-                    </div>
-                )}
+                {/*{selectedCategory === CatalogCategory.BentoCakes && (*/}
+                {/*    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">*/}
+                {/*        <FeaturedProductCard*/}
+                {/*            key={BENTO_CATALOG[0].name}*/}
+                {/*            product={BENTO_CATALOG[0]}*/}
+                {/*            onOrderClick={onOrderClick}*/}
+                {/*        />*/}
+                {/*    </div>*/}
+                {/*)}*/}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     {/*    {filteredProducts.length === 0 && (*/}

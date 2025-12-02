@@ -1,7 +1,7 @@
 import {
     BentoCakesSubcategory,
     CakesSubcategory,
-    CatalogCategory,
+    CatalogCategory, CupcakesSubcategory,
     EskimoSubcategory,
     MussBentoCakesSubcategory, TrifleSubcategory,
 } from '../components/CatalogSection/model/enums';
@@ -373,5 +373,27 @@ export const TRIFLE_CATALOG = [
         category: CatalogCategory.Trifle,
         um: 'шт.',
         subcategory: TrifleSubcategory.All,
+    },
+];
+
+export const CUPCAKES_CATALOG = [
+    {
+        name: 'Капкейки',
+        description: [
+            'От 4-х шт.',
+            'В стоимость входит минимальный декор',
+            'Сахарные картинки и топперы оплачиваются отдельно',
+            'Вкусы:',
+            'Сникерс',
+            'Шоколадное комбо',
+            'Вишня в шоколаде',
+            'Пряная морковь',
+            'Лимон-малина',
+        ],
+        price: '200 ₽',
+        image: '/assets/cupcakes/cupcake.png',
+        category: CatalogCategory.Cupcakes,
+        um: 'шт.',
+        subcategory: CupcakesSubcategory.All,
     },
 ];
