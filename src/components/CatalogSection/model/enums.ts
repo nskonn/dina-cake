@@ -11,17 +11,17 @@ export enum CatalogCategory {
 export enum CakesSubcategory {
     All = 'Все',
     Chukepc = 'Сникерс',
-    CherrySlice = 'ВИШНЁВЫЙ ЛОМТИК',
     Ferrero = 'ФЕРРЕРО',
+    PoppyLemon = 'Мак - Лимон',
+    CherrySlice = 'ВИШНЁВЫЙ ЛОМТИК',
     CaptainCookiesClassic = 'Капитан Кукис (классический)',
     CaptainCookiesCoffee = 'Капитан Кукис (кофейный)',
+    HoneyClassic = 'Медовик (классический)',
     PistachioRaspberry = 'Фисташка - Малина',
     MilkGirl = 'Молочная девочка',
     BerryCloud = 'Ягодное облако',
-    RedVelvet = 'Красный бархат',
     SpicedCarrot = 'Пряная морковь',
-    PoppyLemon = 'Мак - Лимон',
-    HoneyClassic = 'Медовик (классический)',
+    RedVelvet = 'Красный бархат',
     HoneyRaspberry = 'Медовик - Малина',
 }
 

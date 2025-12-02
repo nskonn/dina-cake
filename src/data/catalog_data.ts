@@ -3,13 +3,19 @@ import {
     CakesSubcategory,
     CatalogCategory,
     EskimoSubcategory,
-    MussBentoCakesSubcategory,
+    MussBentoCakesSubcategory, TrifleSubcategory,
 } from '../components/CatalogSection/model/enums';
 
 export const CAKE_CATALOG = [
     {
         name: 'Капитан Кукис (классический)',
-        description: 'Нежный сливочный вкус',
+        description: [
+            'Коржи американское печенье',
+            'Арахисовая нуга',
+            'Сливочный крем с карамелью',
+            'Шоколадно - арахисовый ганаш',
+            'Арахис и хрустящие шариками',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/capitan-cucis.jpg',
         category: CatalogCategory.Cakes,
@@ -18,7 +24,13 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Капитан Кукис (кофейный)',
-        description: 'Кофейный аромат, крем',
+        description: [
+            'Шоколадные коржи-печенье',
+            'Кофейно-шоколадный мусс',
+            'Сливочный крем с маскарпоне',
+            'Шоколадно - кофейный ганаш',
+            'Орешки в карамели',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/capitan-cucis-coffe.jpg',
         category: CatalogCategory.Cakes,
@@ -27,7 +39,12 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Ферреро',
-        description: 'Шоколад и орехи',
+        description: [
+            'Шоколадный бисквит с фундуком',
+            'Шоколадный крем-чиз',
+            'Шоколадный мусс',
+            'Хрустящая вафля в шоколаде',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/ferrero.jpg',
         category: CatalogCategory.Cakes,
@@ -36,7 +53,11 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Фисташка-малина',
-        description: 'Фисташка и свежая малина',
+        description: [
+            'Фисташковый бисквит',
+            'Фисташковый крем-чиз',
+            'Малиновое конфи + (малиновый мусс)',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/fistashca-malina.jpg',
         category: CatalogCategory.Cakes,
@@ -45,7 +66,12 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Ягодное облако',
-        description: 'Воздушный ягодный вкус',
+        description: [
+            'Ванильный Бисквит',
+            'Малиновый мусс (клубника/смородина)',
+            'Малиновое конфи (клубника/смородина)',
+            'Сливочный крем',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/jagodnoje-oblaco.jpg',
         category: CatalogCategory.Cakes,
@@ -54,7 +80,7 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Мак-лимон',
-        description: 'Лимон и мак, освежающе',
+        description: ['Маковый бисквит', 'Крем с маскарпоне', 'Лимоновый курд'],
         price: '5000 ₽',
         image: '/assets/cake/mak-lime.jpg',
         category: CatalogCategory.Cakes,
@@ -63,7 +89,11 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Медовик (классический)',
-        description: 'Медовые коржи, нежный крем',
+        description: [
+            'Классические медовые коржи',
+            'Сметанно-сливочный крем',
+            'Малиновое конфи ( по желанию)',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/medovik.jpg',
         category: CatalogCategory.Cakes,
@@ -72,7 +102,11 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Молочная девочка',
-        description: 'Нежный молочный крем',
+        description: [
+            'Воздушные коржи со сгущенкой',
+            'Нежнейший крем-пломбир',
+            'Малиновый конфитюр',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/milky-girl.jpg',
         category: CatalogCategory.Cakes,
@@ -81,7 +115,12 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Пряная морковь',
-        description: 'Ароматная, пряная, мягкая',
+        description: [
+            'Пряные морковно-ореховые бисквиты',
+            'Взбитая соленая карамель',
+            'Сливочный крем-чиз',
+            'Апельсиновый кур',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/пряная-морковь.png',
         category: CatalogCategory.Cakes,
@@ -90,7 +129,11 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Красный бархат',
-        description: 'Классический бархатный вкус',
+        description: [
+            'Красный бархатный бисквит',
+            'Сливочный крем-чиз',
+            'Ягодное конфи (клубника/вишня/манго-маракуйя)',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/red-barhat.jpg',
         category: CatalogCategory.Cakes,
@@ -99,7 +142,13 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Сникерс',
-        description: 'Карамель, орехи, шоколад',
+        description: [
+            'Шоколадный бисквит',
+            'Шоколадный крем-чиз',
+            'Соленая карамель',
+            'Шоколадный ганаш',
+            'Арахис',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/snikers.jpg',
         category: CatalogCategory.Cakes,
@@ -108,7 +157,12 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Вишнёвый ломтик',
-        description: 'Яркая вишня и крем',
+        description: [
+            'Шоколадный бисквит',
+            'Шоколадный крем-чиз',
+            'Шоколадный мусс',
+            'Вишневое конфи',
+        ],
         price: '5000 ₽',
         image: '/assets/cake/vishneviy-lomtic.jpg',
         category: CatalogCategory.Cakes,
@@ -117,7 +171,7 @@ export const CAKE_CATALOG = [
     },
     {
         name: 'Медовик малина',
-        description: 'Мед, малина и крем',
+        description: ['Мед', 'Малина', 'Крем'],
         price: '5000 ₽',
         image: '/assets/cake/медовик-малина.jpg',
         category: CatalogCategory.Cakes,
@@ -129,7 +183,12 @@ export const CAKE_CATALOG = [
 export const MUSS_BENTO_CATALOG = [
     {
         name: 'Экзотик',
-        description: 'Нежный сливочный вкус с тропическими нотками',
+        description: [
+            'Кокосовый бисквит',
+            'Кусочки ананаса',
+            'Кокосовая начинка',
+            'Мусс манго-маракуйя'
+        ],
         price: '2200 ₽',
         image: '/assets/muss-bento/eczotic.jpg',
         category: CatalogCategory.MussBentoCakes,
@@ -138,7 +197,11 @@ export const MUSS_BENTO_CATALOG = [
     },
     {
         name: 'Тирамису',
-        description: 'Классический итальянский вкус в формате бенто',
+        description: [
+            'Миндальный бисквит',
+            'Шоколадная начинка',
+            'Кофейный мусс'
+        ],
         price: '2200 ₽',
         image: '/assets/muss-bento/тирамису.png',
         category: CatalogCategory.MussBentoCakes,
@@ -147,7 +210,11 @@ export const MUSS_BENTO_CATALOG = [
     },
     {
         name: 'Баннофи-пай',
-        description: 'Сочетание банана, карамели и сливок',
+        description: [
+            'Коржи-печенье',
+            'Бананы в карамели',
+            'Ванильный сливочный мусс'
+        ],
         price: '2200 ₽',
         image: '/assets/muss-bento/баннофи-пай.jpg',
         category: CatalogCategory.MussBentoCakes,
@@ -156,7 +223,11 @@ export const MUSS_BENTO_CATALOG = [
     },
     {
         name: 'Капитан Кукис',
-        description: 'Любимый вкус печенья и шоколада',
+        description: [
+            'Коржи-печенье',
+            'Шоколадно-карамельная начинка',
+            'Арахисовый мусс'
+        ],
         price: '2200 ₽',
         image: '/assets/muss-bento/капитан-кукис.jpg',
         category: CatalogCategory.MussBentoCakes,
@@ -165,7 +236,12 @@ export const MUSS_BENTO_CATALOG = [
     },
     {
         name: 'Мак-лимон',
-        description: 'Освежающий лимонный бисквит с маком',
+        description: [
+            'Маковые бисквиты',
+            'Лимонная начинка',
+            'Малиновый мармелад',
+            'Лимонно-апельсиновый мусс'
+        ],
         price: '2200 ₽',
         image: '/assets/muss-bento/мак-лимон.jpg',
         category: CatalogCategory.MussBentoCakes,
@@ -174,7 +250,11 @@ export const MUSS_BENTO_CATALOG = [
     },
     {
         name: 'Рафаэлло',
-        description: 'Кокосовое наслаждение с миндалем',
+        description: [
+            'Кокосовый бисквит',
+            'Хрустяшка кокос-миндаль-шоколад',
+            'Кокосовый мусс'
+        ],
         price: '2200 ₽',
         image: '/assets/muss-bento/рафаэло.jpg',
         category: CatalogCategory.MussBentoCakes,
@@ -183,7 +263,11 @@ export const MUSS_BENTO_CATALOG = [
     },
     {
         name: 'Фисташка-шоколад',
-        description: 'Изысканное сочетание фисташки и бельгийского шоколада',
+        description: [
+            'Миндальный бисквит',
+            'Хрустящий шоколадный слой',
+            'Фисташковый мусс'
+        ],
         price: '2500 ₽',
         image: '/assets/muss-bento/фисташка-шоколад.jpg',
         category: CatalogCategory.MussBentoCakes,
@@ -192,7 +276,11 @@ export const MUSS_BENTO_CATALOG = [
     },
     {
         name: 'Ягодный бум',
-        description: 'Сочный микс из свежих лесных ягод',
+        description: [
+            'Миндальный бисквит',
+            'Ягодная начинка',
+            'Ягодный мусс'
+        ],
         price: '2200 ₽',
         image: '/assets/muss-bento/ягодный.jpg',
         category: CatalogCategory.MussBentoCakes,
@@ -246,5 +334,44 @@ export const ESCIMO_CATALOG = [
         category: CatalogCategory.Eskimo,
         um: 'шт.',
         subcategory: EskimoSubcategory.RedVelvetStrawberry,
+    },
+];
+
+export const BENTO_CATALOG = [
+    {
+        name: 'Бенто-торт',
+        description: [
+            'На 2-3 человек',
+            'Вес - 400-500г',
+            'В стоимость входит покрытие любого цвета, надпись, небольшой рисунок',
+        ],
+        price: '1400 ₽',
+        image: '/assets/bento/бенто-торт.jpg',
+        category: CatalogCategory.BentoCakes,
+        um: 'шт.',
+        subcategory: EskimoSubcategory.All,
+    },
+];
+
+export const TRIFLE_CATALOG = [
+    {
+        name: 'Трайфл',
+        description: [
+            'От 4-х шт.',
+            'В стоимость входит минимальный декор',
+            'Сахарные картинки и топперы оплачиваются отдельно',
+            'Вкусы:',
+            'Сникерс',
+            'Вишневый ломтик',
+            'Мак-лимон',
+            'Пряная морковь',
+            'Ваниль-малина',
+            'Ваниль-клубника',
+        ],
+        price: '250 ₽',
+        image: '/assets/trifle/trifle.jpg',
+        category: CatalogCategory.Trifle,
+        um: 'шт.',
+        subcategory: TrifleSubcategory.All,
     },
 ];

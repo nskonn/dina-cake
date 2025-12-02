@@ -49,16 +49,50 @@ export const FeaturedProductCard: React.FC<FeaturedProductCardProps> = ({ produc
                 >
                     {product.name}
                 </h3>
-                <p
-                    className="text-gray-600 leading-relaxed text-sm md:text-base mb-5 overflow-hidden text-ellipsis"
-                    style={{
-                        display: '-webkit-box',
-                        WebkitLineClamp: 6,
-                        WebkitBoxOrient: 'vertical',
-                    }}
-                >
-                    {product.description}
-                </p>
+                {Array.isArray(product.description) ? (
+                    <div className="mb-5">
+                        <ul
+                            className="text-gray-600 leading-relaxed text-sm md:text-base space-y-1.5 list-none"
+                            style={{
+                                display: '-webkit-box',
+                                WebkitLineClamp: 6,
+                                WebkitBoxOrient: 'vertical',
+                                overflow: 'hidden',
+                            }}
+                        >
+                            {product.description.map((item, index) => (
+                                <li key={index} className="flex items-start">
+                                    <span
+                                        className="mr-2.5 text-[#A67C52] flex-shrink-0 mt-0.5 font-bold"
+                                        style={{
+                                            fontFamily: "'Montserrat', sans-serif",
+                                        }}
+                                    >
+                                        •
+                                    </span>
+                                    <span
+                                        style={{
+                                            fontFamily: "'Montserrat', sans-serif",
+                                        }}
+                                    >
+                                        {item}
+                                    </span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ) : (
+                    <p
+                        className="text-gray-600 leading-relaxed text-sm md:text-base mb-5 overflow-hidden text-ellipsis"
+                        style={{
+                            display: '-webkit-box',
+                            WebkitLineClamp: 6,
+                            WebkitBoxOrient: 'vertical',
+                        }}
+                    >
+                        {product.description}
+                    </p>
+                )}
                 <button
                     onClick={onOrderClick}
                     className="mt-auto w-full border border-gray-300 text-gray-900 px-6 py-3 rounded-lg hover:bg-gray-900 hover:text-white transition-colors"

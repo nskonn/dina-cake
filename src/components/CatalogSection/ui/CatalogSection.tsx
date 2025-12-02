@@ -3,7 +3,13 @@ import { useNavigate } from 'react-router-dom';
 
 import { CatalogCategory, CATEGORY_DISPLAY_ORDER, CATEGORY_SUBCATEGORIES } from '../model/enums';
 import { FeaturedProductCard } from '../../../entity/Product';
-import { CAKE_CATALOG, ESCIMO_CATALOG, MUSS_BENTO_CATALOG } from '../../../data/catalog_data';
+import {
+    BENTO_CATALOG,
+    CAKE_CATALOG,
+    ESCIMO_CATALOG,
+    MUSS_BENTO_CATALOG,
+    TRIFLE_CATALOG,
+} from '../../../data/catalog_data';
 import { CatalogProduct } from '../model/types';
 
 export type CatalogSectionProps = {
@@ -60,6 +66,8 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
             currentCatalog = MUSS_BENTO_CATALOG;
         } else if (selectedCategory === CatalogCategory.Eskimo) {
             currentCatalog = ESCIMO_CATALOG;
+        } else if (selectedCategory === CatalogCategory.Trifle) {
+            currentCatalog = TRIFLE_CATALOG;
         }
         return currentCatalog.filter(product => {
             if (product.category !== selectedCategory) {
@@ -97,7 +105,7 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                             onClick={() => handleCategoryChange(category)}
                             className={`whitespace-nowrap pb-4 transition-colors ${
                                 selectedCategory === category
-                                    ? 'border-b-2 border-gray-900 text-gray-900'
+                                    ? 'font-bold border-gray-900 text-gray-900'
                                     : 'text-gray-600 hover:text-gray-900'
                             }`}
                         >
@@ -106,15 +114,26 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                     ))}
                 </div>
 
-                {renderSubcategories(selectedCategory)}
+                {![CatalogCategory.BentoCakes, CatalogCategory.Trifle].includes(selectedCategory) &&
+                    renderSubcategories(selectedCategory)}
+
+                {selectedCategory === CatalogCategory.BentoCakes && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                        <FeaturedProductCard
+                            key={BENTO_CATALOG[0].name}
+                            product={BENTO_CATALOG[0]}
+                            onOrderClick={onOrderClick}
+                        />
+                    </div>
+                )}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    {filteredProducts.length === 0 && (
-                        <div className="col-span-full rounded-xl border border-dashed border-gray-300 bg-white/60 p-8 text-center text-gray-600">
-                            В этой подкатегории пока нет товаров, но мы уже работаем над обновлением
-                            каталога ✨
-                        </div>
-                    )}
+                    {/*    {filteredProducts.length === 0 && (*/}
+                    {/*        <div className="col-span-full rounded-xl border border-dashed border-gray-300 bg-white/60 p-8 text-center text-gray-600">*/}
+                    {/*            В этой подкатегории пока нет товаров, но мы уже работаем над обновлением*/}
+                    {/*            каталога ✨*/}
+                    {/*        </div>*/}
+                    {/*    )}*/}
 
                     {filteredProducts.map(product => (
                         <FeaturedProductCard
