@@ -27,4 +27,4 @@ docker compose down --remove-orphans
 docker compose up -d --build
 
 echo "✅ Деплой успешно завершён!"
-docker ps | grep enduro
+docker ps | grep dina-cake
