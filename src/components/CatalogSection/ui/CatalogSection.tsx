@@ -122,7 +122,6 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
                 </div>
 
                 {![
-                    CatalogCategory.BentoCakes,
                     CatalogCategory.Trifle,
                     CatalogCategory.Cupcakes,
                 ].includes(selectedCategory) && renderSubcategories(selectedCategory)}
