@@ -7,7 +7,7 @@ import {
     BENTO_CATALOG,
     CAKE_CATALOG,
     CUPCAKES_CATALOG,
-    ESCIMO_CATALOG,
+    ESCIMO_CATALOG, MACARONS_CATALOG,
     MUSS_BENTO_CATALOG,
     TRIFLE_CATALOG,
 } from '../../../data/catalog_data';
@@ -73,6 +73,8 @@ export function CatalogSection({ onOrderClick }: CatalogSectionProps) {
             currentCatalog = TRIFLE_CATALOG;
         } else if (selectedCategory === CatalogCategory.Cupcakes) {
             currentCatalog = CUPCAKES_CATALOG;
+        } else if (selectedCategory === CatalogCategory.Macarons) {
+            currentCatalog = MACARONS_CATALOG;
         }
         return currentCatalog.filter(product => {
             if (product.category !== selectedCategory) {

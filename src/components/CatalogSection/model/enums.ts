@@ -28,10 +28,8 @@ export enum CakesSubcategory {
 export enum BentoCakesSubcategory {
     All = 'Все',
     Snickers = 'Сникерс',
-    RedVelvetStrawberry = 'Красный бархат (клубника)',
-    RedVelvetMangoPassion = 'Красный бархат (манго-маракуйя)',
-    PoppyLemon = 'Мак-лимон',
-    VanillaStrawberry = 'Ваниль-клубника',
+    RedVelvetStrawberry = 'Фундук-шоколад',
+    RedVelvetMangoPassion = 'Красный бархат (клубника)',
     VanillaRaspberry = 'Ваниль малина',
     CherrySlice = 'Вишневый ломтик',
 }
@@ -66,12 +64,18 @@ export enum EskimoSubcategory {
 
 export enum MacaronsSubcategory {
     All = 'Все',
+    BananaChocolate = 'Банан в шоколаде',
+    TwoCaramel = 'Двойная карамель',
+    CaramelCoconutLatte = 'Карамельно-кокосовый латте',
+    LemonPie = 'Лимонный пирог',
+    RaspberryLycheeLemon = 'Малина-личи с лимоном',
+    HoneyCake = 'Медовик',
+    PeachRaspberry = 'Персик-малина',
+    RoseRaspberry = 'Роза-малина',
     Snickers = 'Сникерс',
-    CherrySlice = 'Вишневый ломтик',
-    PoppyLemon = 'Мак - Лимон',
-    SpicedCarrot = 'Пряная морковь',
-    VanillaRaspberry = 'Ваниль - Малина',
-    VanillaStrawberry = 'Ваниль - Клубника',
+    HazelnutBrownie = 'Фундучный брауни',
+    AppleStrudel = 'Яблочный штрудель',
+    BerrySherbet = 'Ягодный щербет',
 }
 
 export enum MussBentoCakesSubcategory {
@@ -93,7 +97,7 @@ export const CATEGORY_DISPLAY_ORDER: CatalogCategory[] = [
     CatalogCategory.Cupcakes,
     CatalogCategory.Trifle,
     CatalogCategory.Eskimo,
-    // CatalogCategory.Macarons,
+    CatalogCategory.Macarons,
 ];
 
 export const CATEGORY_SUBCATEGORIES: Record<CatalogCategory, string[]> = {

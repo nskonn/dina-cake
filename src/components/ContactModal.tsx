@@ -14,9 +14,9 @@ interface ContactModalProps {
 
 export function ContactModal({ open, onOpenChange }: ContactModalProps) {
   const contactInfo = {
-    phone: '+7 (999) 123-45-67',
-    whatsapp: '+79991234567',
-    telegram: 'dinascake',
+    phone: '+7 (918) 547-14-09',
+    whatsapp: '+79185471409',
+    telegram: 'disk_cake',
   };
 
   return (
@@ -31,7 +31,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
 
         <div className="flex flex-col gap-3 mt-4">
           <a
-            href={`tel:${contactInfo.phone}`}
+            href={`tel:+79185471409`}
             className="flex items-center gap-4 p-4 bg-[#E8C5C5]/30 rounded-lg hover:bg-[#E8C5C5]/50 transition-colors group"
           >
             <div className="bg-[#A67C52] text-white p-3 rounded-full group-hover:bg-[#8B6640] transition-colors">
@@ -44,7 +44,7 @@ export function ContactModal({ open, onOpenChange }: ContactModalProps) {
           </a>
 
           <a
-            href={`https://wa.me/${contactInfo.whatsapp}`}
+            href={`https://wa.me/+79185471409`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 p-4 bg-green-50 rounded-lg hover:bg-green-100 transition-colors group"
