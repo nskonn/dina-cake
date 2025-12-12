@@ -14,7 +14,7 @@ export function Home() {
 
     return (
         <div>
-            <section className="relative bg-[#F5E8DC] py-16 md:py-20 overflow-hidden">
+            <section className="relative bg-[#F3EFE9] py-16 md:py-20 overflow-hidden">
                 {/* Подложка */}
                 <div className="md:hidden absolute top-1/2 transform -translate-y-1/2 bg-white opacity-30 z-10 p-10 w-full h-full"></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +68,7 @@ export function Home() {
 
             <Footer />
 
-            <ContactModal open={modalOpen} onOpenChange={setModalOpen} />
+            {modalOpen && (<ContactModal open={modalOpen} onOpenChange={setModalOpen} />)}
         </div>
     );
 }

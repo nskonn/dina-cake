@@ -63,7 +63,7 @@ export function Catalog() {
 
           <Footer />
 
-          <ContactModal open={modalOpen} onOpenChange={setModalOpen} />
+          {modalOpen && (<ContactModal open={modalOpen} onOpenChange={setModalOpen} />)}
       </div>
   );
 }

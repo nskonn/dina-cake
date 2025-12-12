@@ -90,11 +90,11 @@ export function ReviewsSection({ onOrderClick }: ReviewSectionProps) {
     ];
 
     return (
-        <section className="py-10 md:py-20 bg-[#F5E8DC]">
+        <section className="py-10 md:py-20 bg-[#F3EFE9]">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2
-                        className="text-gray-900 mb-4 text-4xl md:text-5xl"
+                        className="text-gray-900 mb-4 text-3xl md:text-5xl"
                         style={{
                             fontFamily: "'Montserrat', sans-serif",
                             fontWeight: '500',

@@ -5,12 +5,12 @@ export function ContactsSection() {
     const contactInfo = {
         phone: '+79185471409',
         whatsapp: '+79185471409',
-        telegram: 'Dinas_cake',
+        telegram: 'disk_cake',
         instagram: 'dina.s_cake',
     };
 
     return (
-        <section id="contact" className="py-12 md:py-20 bg-[#F5E8DC] relative overflow-hidden">
+        <section id="contact" className="py-12 md:py-20 bg-[#F3EFE9] relative overflow-hidden">
             {/* Декоративные элементы */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#E8C5C5]/20 rounded-full -mr-32 -mt-32 blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#A67C52]/10 rounded-full -ml-32 -mb-32 blur-3xl"></div>

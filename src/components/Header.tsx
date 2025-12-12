@@ -24,15 +24,14 @@ export function Header() {
 
     return (
         <>
-            <header className="bg-[#F5E8DC] border-b border-[#C9B299] sticky top-0 z-50">
+            <header className="bg-[#F3EFE9] border-b border-gray-300 sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-20">
                         {/* Логотип */}
                         <Link to="/" className="flex items-center">
                             <span
-                                className="text-transparent bg-clip-text bg-gradient-to-r from-[#A67C52] via-[#C4956F] to-[#D4A574] tracking-wide"
+                                className="text-transparent font-script bg-clip-text bg-gradient-to-r from-[#A67C52] via-[#C4956F] to-[#D4A574] tracking-wide"
                                 style={{
-                                    fontFamily: "'Dancing Script', cursive",
                                     fontWeight: '700',
                                     fontSize: '32px',
                                 }}
@@ -100,7 +99,7 @@ export function Header() {
                     )}
                 </div>
             </header>
-            <ContactModal open={modalOpen} onOpenChange={setModalOpen} />
+            {modalOpen && (<ContactModal open={modalOpen} onOpenChange={setModalOpen} />)}
         </>
     );
 }

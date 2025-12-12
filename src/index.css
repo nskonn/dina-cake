@@ -5,6 +5,10 @@ button {
   /*border-radius: 2px;*/
 }
 
+.font-script {
+  font-family: 'Pinyon Script', cursive;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

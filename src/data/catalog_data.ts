@@ -339,19 +339,6 @@ export const ESCIMO_CATALOG = [
 
 export const BENTO_CATALOG = [
     {
-        name: 'Бенто-торт',
-        description: [
-            'На 2-3 человек',
-            'Вес - 400-500г',
-            'В стоимость входит покрытие любого цвета, надпись, небольшой рисунок',
-        ],
-        price: '1400 ₽',
-        image: '/assets/bento/бенто-торт.jpg',
-        category: CatalogCategory.BentoCakes,
-        um: 'шт.',
-        subcategory: BentoCakesSubcategory.All,
-    },
-    {
         name: 'Сникерс',
         description: [
             'Шоколадные бисквиты',
