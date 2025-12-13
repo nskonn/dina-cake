@@ -400,7 +400,7 @@ export const BENTO_CATALOG = [
             'Вишневый конфитюр',
         ],
         price: '1400 ₽',
-        image: '/assets/bento/вишневый_ломтик.png',
+        image: '/assets/bento/3.png',
         category: CatalogCategory.BentoCakes,
         um: 'шт.',
         subcategory: BentoCakesSubcategory.CherrySlice,
@@ -411,9 +411,6 @@ export const TRIFLE_CATALOG = [
     {
         name: 'Трайфл',
         description: [
-            'От 4-х шт.',
-            'В стоимость входит минимальный декор',
-            'Сахарные картинки и топперы оплачиваются отдельно',
             'Вкусы:',
             'Сникерс',
             'Вишневый ломтик',
@@ -434,9 +431,6 @@ export const CUPCAKES_CATALOG = [
     {
         name: 'Капкейки',
         description: [
-            'От 4-х шт.',
-            'В стоимость входит минимальный декор',
-            'Сахарные картинки и топперы оплачиваются отдельно',
             'Вкусы:',
             'Сникерс',
             'Шоколадное комбо',
