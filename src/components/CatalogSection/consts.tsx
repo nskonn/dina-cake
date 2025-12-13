@@ -1,5 +1,15 @@
 import { CatalogCategory } from './model/enums';
-import { Cherry, Gift, IceCream, Utensils, Box, ChefHat, Palette, Scale, Users, Cookie, PartyPopper } from 'lucide-react';
+import {
+    Cherry,
+    Gift,
+    Box,
+    ChefHat,
+    Palette,
+    Scale,
+    Users,
+    Cookie,
+    PartyPopper,
+} from 'lucide-react';
 
 export const CATEGORY_INFO = {
     [CatalogCategory.Cakes]: {
@@ -96,14 +106,14 @@ export const CATEGORY_INFO = {
             'Полноценный торт в удобном индивидуальном стаканчике. Слои сочного бисквита, нежного крема и начинки.',
         specs: [
             {
-                icon: Utensils,
-                label: 'Удобство',
-                text: 'Порционный десерт',
+                icon: Box,
+                label: 'Заказ',
+                text: 'Набор от 4 шт.',
             },
             {
                 icon: Scale,
                 label: 'Объем',
-                text: '1 порция - 250 мл. От 4-х шт.',
+                text: '1 порция - 250 мл.',
             },
             {
                 icon: Palette,
@@ -118,20 +128,19 @@ export const CATEGORY_INFO = {
             'Оригинальное пирожное в форме мороженого на палочке. Внутри — картошка или мусс, снаружи — хрустящий шоколад.',
         specs: [
             {
-                icon: IceCream,
-                label: 'Вид',
-                text: 'В стоимость входит покрытие любого цвета, посыпки,\n' +
-                    'бантики, золото, серебро',
+                icon: Box,
+                label: 'Заказ',
+                text: 'Набор от 4 шт.',
             },
             {
                 icon: Scale,
                 label: 'Вес',
-                text: '1 порция - 120 г. От 4-х шт.',
+                text: '1 порция - 120 г.',
             },
             {
                 icon: Palette,
                 label: 'Оформление',
-                text: 'Сложный дизайн, декор ягодами оплачивается отдельно',
+                text: 'В стоимость входит покрытие любого цвета, посыпки, бантики, золото, серебро.',
             },
         ],
     },
@@ -153,7 +162,7 @@ export const CATEGORY_INFO = {
             {
                 icon: Cherry,
                 label: 'Вкусы',
-                text: 'Более 10 начинок: от соленой',
+                text: 'Более 10 начинок',
             },
         ],
     },
