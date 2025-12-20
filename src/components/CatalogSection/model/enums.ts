@@ -76,6 +76,7 @@ export enum MacaronsSubcategory {
     HazelnutBrownie = 'Фундучный брауни',
     AppleStrudel = 'Яблочный штрудель',
     BerrySherbet = 'Ягодный щербет',
+    Cocos = 'Кокосовый чизкейк',
 }
 
 export enum MussBentoCakesSubcategory {
